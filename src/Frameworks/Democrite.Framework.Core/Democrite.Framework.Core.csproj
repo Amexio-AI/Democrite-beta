@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\..\SharedFrameworkAssmblyInfo.props" />
+	<Import Project="..\..\..\SharedFrameworkDemocriteAssemblyInfo.props" />
+
+	<PropertyGroup>
+
+		<IsPackable>true</IsPackable>
+		<Description>Democrite core use by all democrite parts.</Description>
+
+		<PackageTags>Democrite;Orleans;Multi-VGrain;Multi-Grain;Multi-Agent;Framework;Core</PackageTags>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Elvex.Toolbox" />
+		<PackageReference Include="Microsoft.Orleans.Core" />
+		<PackageReference Include="Microsoft.Orleans.Runtime" />
+		<PackageReference Include="System.Reactive" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Democrite.Framework.Client" />
+		<InternalsVisibleTo Include="Democrite.Framework.Cluster" />
+		<InternalsVisibleTo Include="Democrite.Framework.Node" />
+		<InternalsVisibleTo Include="Democrite.Framework.Node.Cron" />
+		<InternalsVisibleTo Include="Democrite.Framework.Node.Signals" />
+		<InternalsVisibleTo Include="Democrite.UnitTests.ToolKit" />
+
+		<!-- Testing Purpose -->
+		<InternalsVisibleTo Include="Democrite.Framework.Node.Signals.UnitTests" />
+		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Democrite.Framework.Core.Abstractions\Democrite.Framework.Core.Abstractions.csproj" PrivateAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Resources\DemocriteCoreLogSR.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>DemocriteCoreLogSR.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Resources\DemocriteCoreLogSR.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>DemocriteCoreLogSR.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+
+</Project>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\..\SharedFrameworkAssmblyInfo.props" />
+	<Import Project="..\..\..\SharedFrameworkDemocriteAssemblyInfo.props" />
+
+	<PropertyGroup>
+
+		<IsPackable>true</IsPackable>
+		<Description>Democrite client abstract library used to consume democrite cluster nodes.</Description>
+
+		<PackageTags>Democrite;Orleans;Multi-VGrain;Multi-Grain;Multi-Agent;Framework;Client;Abstract</PackageTags>
+
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\Democrite.Framework.Cluster.Abstractions\Democrite.Framework.Cluster.Abstractions.csproj" />
+	</ItemGroup>
+
+</Project>

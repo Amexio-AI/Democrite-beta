@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\..\SharedFrameworkAssmblyInfo.props" />
+	<Import Project="..\..\..\SharedFrameworkDemocriteAssemblyInfo.props" />
+
+	<PropertyGroup>
+
+		<IsPackable>true</IsPackable>
+		<Description>Democrite core abstract information use by all democrite parts.</Description>
+
+		<PackageTags>Democrite;Orleans;Multi-VGrain;Multi-Grain;Multi-Agent;Framework;Core;Abstract</PackageTags>
+
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Models\MetaData\**" />
+	  <EmbeddedResource Remove="Models\MetaData\**" />
+	  <None Remove="Models\MetaData\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="Elvex.Toolbox" />
+	  <PackageReference Include="MessagePack" />
+	  <PackageReference Include="Microsoft.Orleans.Sdk" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Democrite.Framework.Node" />
+		<InternalsVisibleTo Include="Democrite.Framework.Client" />
+		<InternalsVisibleTo Include="Democrite.Framework.Node.Signals" />
+
+		<!-- Testing Purpose -->
+		<InternalsVisibleTo Include="Democrite.Framework.Node.Signals.UnitTests" />
+		<InternalsVisibleTo Include="Democrite.Framework.Core.CodeGenerator.UnitTests" />
+		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Democrite.Framework.Core.CodeGenerator\Democrite.Framework.Core.CodeGenerator.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="IDynamicDefinitionHandler.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>IDynamicDefinitionHandler.tt</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\DemocriteExceptionSR.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>DemocriteExceptionSR.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\DemocriteExceptionSR.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>DemocriteExceptionSR.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="IDynamicDefinitionHandler.tt">
+	    <LastGenOutput>IDynamicDefinitionHandler.cs</LastGenOutput>
+	    <Generator>TextTemplatingFileGenerator</Generator>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+</Project>

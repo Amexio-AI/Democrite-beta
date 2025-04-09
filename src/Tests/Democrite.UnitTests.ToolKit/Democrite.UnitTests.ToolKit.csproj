@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\..\\SharedFrameworkAssmblyInfo.props" />
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<IsTestProject>false</IsTestProject>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="AutoFixture" />
+		<PackageReference Include="AutoFixture.AutoNSubstitute" />
+		<PackageReference Include="Elvex.Toolbox.UnitTests.ToolKit" />
+		<PackageReference Include="H.Formatters.Newtonsoft.Json" />
+		<PackageReference Include="H.Pipes" />
+		<PackageReference Include="Microsoft.Orleans.TestingHost" />
+		<PackageReference Include="NFluent" />
+		<PackageReference Include="xunit" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" />
+		<PackageReference Include="System.ComponentModel.TypeConverter" />
+		
+		<!-- TO BE REPLACE by NSubstitute -->
+		<PackageReference Include="Moq" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\src\Frameworks\Democrite.Framework.Core.Abstractions\Democrite.Framework.Core.Abstractions.csproj" />
+		<ProjectReference Include="..\..\..\src\Frameworks\Democrite.Framework.Node\Democrite.Framework.Node.csproj" />
+	</ItemGroup>
+
+</Project>

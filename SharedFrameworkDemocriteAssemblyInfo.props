@@ -1,0 +1,10 @@
+﻿<Project>
+
+	<PropertyGroup>
+
+		<Product>Democrite</Product>
+		<PackageTags>Democrite;Orleans;Multi-Agent;Multi-Grain;Multi-VAgent;VGrain;Grain;Framework</PackageTags>
+		
+	</PropertyGroup>
+	
+</Project>
