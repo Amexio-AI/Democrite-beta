@@ -1,28 +1,4 @@
-<table style="border:none">
-    <tr style="border:none">
-        <td style="border:none">
-            <image src="docs/logo.png">
-        </td>
-        <td style="border:none">
-            <span style='font-size:112px;valign:center'>Democrite</span>
-        </td>
-    </tr>
-</table>
 
-<table style="border:none">
-    <tr style="border:none">
-        <td style="border:none">
-            <span style='font-size:32px;valign:center'>Sponsored by</span>
-        </td>
-        <td style="border:none">
-            <a href="https://www.amexiogroup.com"><img src="https://www.amexio.fr/wp-content/themes/Amexio/img/Amexio-Horizontal.svg" height="64px" /></a>
-        </td>
-    </tr>
-</table>
-
-<br />
-<br />
-<br />
 
 ![GitHub Tag](https://img.shields.io/github/v/tag/Nexai-net/democrite?style=for-the-badge)
 
